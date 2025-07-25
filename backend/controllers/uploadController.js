@@ -3,7 +3,7 @@ import {
   fetchParsedResult,
   getStatusOfPdf,
   uploadPdfToLlamaParse,
-} from "../services/llamaparser.js";
+} from "../services/llamaParserService.js";
 import {
   getEmbeddingsAndStoreInDb,
   retreiveFromVectorStore,
