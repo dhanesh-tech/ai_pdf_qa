@@ -1,0 +1,327 @@
+/* PDF Viewer Custom Styles - Override default styles to match our design system */
+
+/* Main container overrides */
+.rpv-core__viewer {
+  background-color: white !important;
+  color: var(--neutral-800) !important;
+}
+
+/* Toolbar styling */
+.rpv-core__toolbar {
+  background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+  border-bottom: 1px solid #d1d5db !important;
+  padding: 0.75rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+}
+
+/* Toolbar button groups */
+.rpv-core__toolbar > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+}
+
+/* Toolbar buttons */
+.rpv-core__toolbar button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+  margin: 0 !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 36px !important;
+  height: 36px !important;
+}
+
+.rpv-core__toolbar button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.rpv-core__toolbar button:active {
+  transform: translateY(0) !important;
+}
+
+/* Disabled buttons */
+.rpv-core__toolbar button[disabled] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Sidebar styling */
+.rpv-core__sidebar {
+  background-color: #f9fafb !important;
+  border-right: 1px solid #e5e7eb !important;
+}
+
+/* Sidebar tabs */
+.rpv-core__sidebar-tabs {
+  background-color: #f3f4f6 !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.rpv-core__sidebar-tab {
+  background-color: transparent !important;
+  color: #6b7280 !important;
+  border: none !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.rpv-core__sidebar-tab:hover {
+  background-color: #e5e7eb !important;
+  color: #374151 !important;
+}
+
+.rpv-core__sidebar-tab--active {
+  background-color: white !important;
+  color: #4b5563 !important;
+  border-bottom: 2px solid #6b7280 !important;
+}
+
+/* Page navigation */
+.rpv-core__page-navigation {
+  background-color: #f3f4f6 !important;
+  border-top: 1px solid #e5e7eb !important;
+  padding: 0.75rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+}
+
+.rpv-core__page-navigation button {
+  background: white !important;
+  color: #6b7280 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0 !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 40px !important;
+  height: 36px !important;
+}
+
+.rpv-core__page-navigation button:hover {
+  background: #f9fafb !important;
+  color: #374151 !important;
+  border-color: #9ca3af !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Page number input */
+.rpv-core__page-navigation input {
+  background: white !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+  text-align: center !important;
+  color: #374151 !important;
+  font-weight: 500 !important;
+  width: 60px !important;
+  height: 36px !important;
+}
+
+.rpv-core__page-navigation input:focus {
+  border-color: #6b7280 !important;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1) !important;
+}
+
+/* Zoom controls */
+.rpv-core__zoom {
+  background-color: #f3f4f6 !important;
+  border-top: 1px solid #e5e7eb !important;
+  padding: 0.75rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+}
+
+.rpv-core__zoom button {
+  background: white !important;
+  color: #6b7280 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+  margin: 0 !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 36px !important;
+  height: 36px !important;
+}
+
+.rpv-core__zoom button:hover {
+  background: #f9fafb !important;
+  color: #374151 !important;
+  border-color: #9ca3af !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Search panel */
+.rpv-core__search-popup {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.rpv-core__search-popup input {
+  background: white !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  color: #374151 !important;
+}
+
+.rpv-core__search-popup input:focus {
+  border-color: #6b7280 !important;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1) !important;
+}
+
+/* Thumbnail styling */
+.rpv-core__thumbnail {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.rpv-core__thumbnail:hover {
+  border-color: #9ca3af !important;
+  box-shadow: 0 2px 8px rgba(107, 114, 128, 0.15) !important;
+}
+
+.rpv-core__thumbnail--selected {
+  border-color: #6b7280 !important;
+  box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.2) !important;
+}
+
+/* Document outline */
+.rpv-core__outline-item {
+  color: #6b7280 !important;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.rpv-core__outline-item:hover {
+  background-color: #f9fafb !important;
+  color: #374151 !important;
+}
+
+.rpv-core__outline-item--active {
+  background-color: #f3f4f6 !important;
+  color: #4b5563 !important;
+  font-weight: 500 !important;
+}
+
+/* Scrollbar styling */
+.rpv-core__viewer ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.rpv-core__viewer ::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.rpv-core__viewer ::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+  transition: background 0.2s ease-in-out;
+}
+
+.rpv-core__viewer ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Loading spinner */
+.rpv-core__loading {
+  color: #6b7280 !important;
+}
+
+/* Error messages */
+.rpv-core__error {
+  color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  border-radius: 6px !important;
+  padding: 1rem !important;
+}
+
+/* Success messages */
+.rpv-core__success {
+  color: #10b981 !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+  border: 1px solid rgba(16, 185, 129, 0.2) !important;
+  border-radius: 6px !important;
+  padding: 1rem !important;
+}
+
+/* Additional alignment fixes */
+.rpv-core__toolbar-label {
+  color: white !important;
+  font-weight: 500 !important;
+  margin-right: 0.5rem !important;
+}
+
+.rpv-core__page-navigation-label {
+  color: #6b7280 !important;
+  font-weight: 500 !important;
+  margin: 0 0.5rem !important;
+}
+
+.rpv-core__zoom-label {
+  color: #6b7280 !important;
+  font-weight: 500 !important;
+  margin: 0 0.5rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rpv-core__toolbar {
+    padding: 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+  
+  .rpv-core__toolbar button {
+    padding: 0.25rem !important;
+    min-width: 32px !important;
+    height: 32px !important;
+  }
+  
+  .rpv-core__page-navigation,
+  .rpv-core__zoom {
+    padding: 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+  
+  .rpv-core__page-navigation button,
+  .rpv-core__zoom button {
+    min-width: 32px !important;
+    height: 32px !important;
+    padding: 0.25rem !important;
+  }
+} 
