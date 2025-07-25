@@ -11,8 +11,11 @@ function ShowChatAndPdf({ file, onClearFile }: ShowChatAndPdfProps) {
   const [page, setPage] = useState<{page: number} >({page: 1});
   const fileUrl = URL.createObjectURL(file) 
 
+  /**
+   * handle page click to navigate to the page
+   * @param page 
+   */
   const handlePageClick = (page: number) => {
-    console.log(`Navigating to page ${page}`);
     if(page > 0){
       setPage((prev)=> ({...prev, page: page}));
     }

@@ -16,7 +16,6 @@ function App() {
     setFile(null);
   };
 
-  console.log(" app.js : file")
   return (
     <>
       {file ? (

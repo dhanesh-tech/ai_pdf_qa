@@ -1,62 +1,36 @@
-import React, { useState } from "react";
-import { apiService } from "../utils/apiService";
-import { apiUrls } from "../constants/apiUrls";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import useChatInterface from "../hooks/useChatInterface";
 
-interface Message {
-  page?: number;
-  text: string;
-  isUser: boolean;
-}
-
-function ChatInterface({
-  handlePageClick,
-  onClearFile,
-}: {
+interface ChatInterfaceProps {
   handlePageClick: (page: number) => void;
   onClearFile: () => void;
-}) {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [inputMessage, setInputMessage] = useState("");
-  const [sendMessageLoading, setSendMessageLoading] = useState(false);
-  const handleSendMessage = () => {
-    if (inputMessage.trim()) {
-      const newMessage = {
-        text: inputMessage,
-        isUser: true,
-      };
-      setMessages([...messages, newMessage]);
+}
 
-      setInputMessage("");
-      sendMessageToBackend(inputMessage);
-    }
-  };
+/**
+ * ChatInterface component for handling document-based conversations with AI
+ * 
+ * This component provides a chat interface where users can ask questions about uploaded documents.
+ * It displays example questions when no conversation has started, handles message sending,
+ * and shows conversation history with page references for PDF documents.
+ * 
+ * @component
+ * @param {ChatInterfaceProps} props - The component props
+ * @param {function} props.handlePageClick - Function to navigate to specific PDF pages
+ * @param {function} props.onClearFile - Function to clear uploaded file and return to upload
+ * 
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSendMessage();
-    }
-  };
+ */
+function ChatInterface({ handlePageClick, onClearFile }: ChatInterfaceProps) {
+  const {
+    messages,
+    inputMessage,
+    sendMessageLoading,
+    handleSendMessage,
+    handleKeyPress,
+    setInputMessage,
+  } = useChatInterface();
 
-  const sendMessageToBackend = async (message: string) => {
-    setSendMessageLoading(true);
-    const res = await apiService.postData(apiUrls.sendUserChat, {
-      message,
-      matchCount: 10,
-    });
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      {
-        page: res.page,
-        text: res.text,
-        isUser: false,
-      },
-    ]);
-    setSendMessageLoading(false);
-  };
-  console.log(" chat interface component");
   return (
     <div className="h-full border border-neutral-200 rounded-soft flex flex-col bg-white shadow-soft overflow-hidden relative">
       {/* Cross Button */}
@@ -221,19 +195,19 @@ function ChatInterface({
             {sendMessageLoading ? (
               <div className="w-5 h-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
             ) : (
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              />
-            </svg>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                />
+              </svg>
             )}
           </button>
         </div>
