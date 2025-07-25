@@ -94,7 +94,10 @@ Open a new terminal and navigate to the frontend directory:
 ```bash
 cd frontend
 ```
-
+Create a `.env` file in the Frontend directory:
+```env
+VITE_NODE_BACKEND_URL=http://localhost:4000
+```
 Install dependencies:
 ```bash
 npm install
