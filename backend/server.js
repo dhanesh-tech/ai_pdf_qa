@@ -17,9 +17,7 @@ const PORT = envDefaults.PORT;
 const uploadDir = "./uploads";
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
 
-app.use(cors({
-  origin: envDefaults.FRONTEND_URL,
-}));
+app.use(cors());
 app.use(express.json());
 // Multer config for PDF uploads
 const storage = multer.diskStorage({
